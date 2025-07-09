@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lebenslauf – Ilham Juliansyah</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #e0e0e0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    #cv {
+      width: 210mm;
+      margin: 20px auto;
+      background: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .left-column {
+      width: 35%;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20mm 10mm;
+      box-sizing: border-box;
+    }
+
+    .left-column img {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .left-column h1 {
+      color: white;
+    }
+
+    .left-column p {
+      font-size: 14px;
+      margin: 6px 0;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    .right-column {
+      width: 65%;
+      padding: 20mm;
+      box-sizing: border-box;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 18px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+      margin-top: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      button {
+        display: none;
+      }
+
+      #cv {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cv">
+    <div class="left-column">
+      <img src="/image/profile.jpeg" alt="">
+      <a href="Website.html">
+        <h1>Ilham Juliansyah</h1>
+      </a>
+      <hr>
+      <p>Brentanostrasse 20<br />D-64646 Heppenheim</p>
+      <p>📞 01590-1116815</p>
+      <p>📧 Ilham.Julian@gmx.de</p>
+      <p>Geboren am 14.07.1999<br />in Jakarta</p>
+      <p>Familienstand: Ledig</p>
+      <p>Staatsangehörigkeit: Indonesisch</p>
+
+
+    </div>
+
+    <div class="right-column">
+      <h1>Lebenslauf</h1>
+
+      <h2>Berufserfahrung</h2>
+      <ul>
+        <li><strong>11/2021 – heute:</strong> Ausbildung als Koch, Landgasthaus Hölzing</li>
+        <li><strong>05/2020 – 07/2021:</strong> Verkäufer, Alfamart Jakarta
+          <ul>
+            <li>Warenlieferung entgegennehmen</li>
+            <li>Waren lagern</li>
+            <li>Bestände kontrollieren</li>
+          </ul>
+        </li>
+        <li><strong>01/2019 – 07/2019:</strong> Kellner, Shaburi & Kintan, Jakarta
+          <ul>
+            <li>Gäste begrüßen</li>
+            <li>Speisen & Getränke servieren</li>
+            <li>Bestellungen aufnehmen</li>
+          </ul>
+        </li>
+        <li><strong>09/2018 – 12/2018:</strong> Medieneditor, PT. Indicator Indonesia
+          <ul>
+            <li>Video schneiden & bearbeiten</li>
+            <li>Bild- und Tonmaterial montieren</li>
+            <li>Texte und Daten bearbeiten</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Sprachschule</h2>
+      <ul>
+        <li>08/2019 – 01/2020: Goethe-Institut Bandung – Deutsch B1</li>
+      </ul>
+
+      <h2>Ausbildung</h2>
+      <ul>
+        <li>08/2015 – 08/2018: SMK Yapia Pondok Aren – Abitur</li>
+      </ul>
+
+      <h2>Kenntnisse</h2>
+      <ul>
+        <li>Microsoft Office, Photoshop, Premiere, Dreamweaver, CorelDraw</li>
+        <li>Grundkenntnisse HTML, CSS, JavaScript</li>
+      </ul>
+
+      <h2>Sprachen</h2>
+      <ul>
+        <li>Indonesisch (Muttersprache)</li>
+        <li>Deutsch (fließend)</li>
+        <li>Englisch (Grundkenntnisse)</li>
+      </ul>
+
+      <h2>Interessen</h2>
+      <ul>
+        <li>Computer, Badminton, Fußball</li>
+      </ul>
+    </div>
+  </div>
+
+  <button onclick="window.print()">Als PDF herunterladen</button>
+
+</body>
+
+</html>

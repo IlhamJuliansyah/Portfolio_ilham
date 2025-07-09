@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taschenrechner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .calculator {
+            display: inline-block;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 10px;
+        }
+
+        button {
+            height: 50px;
+            font-size: 1.2em;
+            border: none;
+            background-color: #656565;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #343434;
+        }
+
+        .btn-clear {
+            background-color: #575757;
+        }
+
+        .btn-clear:hover {
+            background-color: #474747;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" class="display" readonly>
+        <div class="buttons">
+            <button onclick="appendValue('(')">(</button>
+            <button onclick="appendValue(')')">)</button>
+            <button onclick="appendValue('%')">%</button>
+            <button class="btn-clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('*')">x</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendValue('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        // Anzeige aktualisieren
+        function appendValue(value) {
+            const display = document.getElementById('display');
+            display.value += value;
+        }
+
+        // Berechnung ausführen
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                let expression = display.value;
+                expression = expression.replace(/%/g, '/100'); // Prozent durch Division ersetzen
+                display.value = eval(expression); // eval führt die Berechnung aus
+            } catch {
+                display.value = "Fehler"; // Fehler anzeigen
+            }
+        }
+
+        // Anzeige löschen
+        function clearDisplay() { // Funktion display leeren
+            document.getElementById('display').value = ''; // display leeren
+        }
+
+        // Tastatureingaben verarbeiten
+        document.addEventListener('keydown', function (event) { // Tastatureingaben verarbeiten
+            const key = event.key;
+            const validKeys = '0123456789+-*/().%'; // Gültige Tasten
+            const display = document.getElementById('display');
+
+            if (validKeys.includes(key)) {
+                appendValue(key); // Zeichen hinzufügen
+            } else if (key === 'Enter') {
+                calculate(); // Berechnung durchführen
+            } else if (key === 'Backspace') {
+                display.value = display.value.slice(0, -1); // Letztes Zeichen löschen
+            } else if (key === 'Escape') {
+                clearDisplay(); // Anzeige löschen
+            }
+        });
+    </script>
+
+</body>
+
+</html>

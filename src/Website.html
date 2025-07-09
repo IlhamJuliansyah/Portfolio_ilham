@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/image/fav.png">
+    <link rel="stylesheet" href="Website.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div>
+            <a href="#" class="logo"><span>Julian</span>syah</a>
+        </div>
+
+        <nav class="nav">
+            <button class="dark" id="theme-toggle">
+                <h1>🔆mode</h1><!-- <img src="/image/dark.png"> -->
+            </button>
+            <a href="#" class="active">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div>
+            <h2>Hallo</h2>
+            <h1>ich bin <span>Ilham <br>Juliansyah <br></span> Fachinformatiker <span
+                    style="color: rgb(188, 131, 0);">Anwendungsentwicklung</span></h1>
+            <p> Ich bin Auszubildender zum Fachinformatiker mit einer Leidenschaft
+                für Programmierung. Ich liebe es, mit Code kreative Lösungen zu entwickeln und mich
+                ständig weiterzubilden. In meiner Freizeit arbeite ich an eigenen Projekten und
+                entdecke neue Technologien. Ich freue mich darauf, meine Fähigkeiten in der
+                IT-Branche weiterzuentwickeln!
+                <br>
+                <br>
+                <a href="pdf.html">download meine Lebenslauf</a>
+            </p>
+           
+        </div>
+        <div class="image">
+            <img src="/image/ilham.png" alt="">
+            <p style="text-align: center;">Webentwickler • HTML | CSS | JavaScript</p>
+        </div>
+        <br>
+    </section>
+    <div>
+        <a href="#contact" class="about-contact">Contact Me!</a>
+    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2 style="color: black;">Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="kalkulator.html">
+                    <img src="/image/calculator.svg" alt="">
+                    <h3>Taschenrechner</h3>
+                    <p>Mit einem Taschenrechner können wir Probleme in
+                        Sekundenschnelle lösen, deren manuelle Bearbeitung Stunden dauern würde.</p>
+                </a>
+            </div>
+            <div class="project-item">
+                <!-- <a href="Quiz.html" download> AUTO DOWNLOAD-->
+                <a href="Quiz.html"> <!-- download -->
+                    <img src="/image/quiz.png">
+                    <h3>Quiz Projekt</h3>
+                    <p>Ein Quiz ist ein Fragebogen, mit dem der Wissensstand zu einem bestimmten
+                        Thema ermittelt werden kann. Beim spielerischen Quiz steht nicht die
+                        Beurteilung, sondern die Unterhaltung im Vordergrund.</p>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="ToDoListe.html">
+                    <img src="/image/to-do-list.jpg" alt="">
+                    <h3>To Do Liste App</h3>
+                    <p>Das Ziel der ToDo-Liste ist es, einen Überblick über alle bereits erledigten
+                        und noch zu erledigenden Aufgaben zu schaffen. Dadurch lassen sich Zeit
+                        und Ressourcen besser planen, um das Ziel schnell und erfolgreich zu erreichen.
+                    </p>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="BarcodeGenerator.html">
+                    <img src="/image/Code Generator.png" alt="">
+                    <h3>Barcode Generator</h3>
+                    <p>Welche Informationen stehen im Barcode?
+                        Ein Barcode hat den wesentlichen Vorteil, dass viele Daten auf kleinem Raum komprimiert
+                        werden können. Mit einem Scanner ausgelesen, verbirgt sich hinter einem Barcode immer
+                        eine Zahlenfolge, die für einen Artikel steht, dem zuvor exakt diese Zahlenfolge
+                        zugewiesen wurde.</p>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="imageGenerator.html">
+                    <img src="/image/kamera.jpg">
+                    <h3>Image Suchen</h3>
+                    <p>Bild, unter anderem in der bildenden Kunst eine Darstellung auf einer Fläche: Gemälde,
+                        ein Werk mit flächenhaftem Einsatz von Farben und Tonwerten. Zeichnung (Kunst),
+                        ein Werk aus Linien und Strichen. Grafik, ein druckgrafisches Werk.</p>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="musicPlayer.html" target="_blank">
+                    <img src="/image/musik.jpg">
+                    <h3>Music Player</h3>
+                    <p>Musik ist eine Kunstgattung, deren Werke aus organisierten Klängen bestehen, die Empfindungen
+                        oder Assoziationen hervorrufen können. Als Ausgangsmaterial dienen Töne, Klänge und Geräusche,
+                        sowie deren akustische Eigenschaften, wie Lautstärke, Klangfarbe, Tonhöhe und Tondauer.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to send me a message!</p>
+        <form onsubmit="event.preventDefault(); sendMail();">
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <input type="email" name="email" id="email" placeholder="Your Email">
+            <input type="password" name="subject" id="subject" placeholder="Enter your Password">
+            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            <a type="submit" class="button" href="#about" onclick="sendMail()">Send</a>
+            <div class="popup" id="popup">
+                <img src="image/checkmark.png">
+                <h2>Danke!!</h2>
+                <p>Ihre E-Mail wurde gesendet!!</p>
+                <button type="button" onclick="closePopup()"><strong>OK!</strong></button>
+            </div>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Ilham Juliansyah. All Rights Reserved.</p>
+        <a href="#">Portfolio</a>
+    </footer>
+    <!-- für Email Schicken -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("FaXY3wl6TL22Ba94a"); // Initialize EmailJS with your user ID
+        })();
+    </script>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const nav = document.querySelector('.nav');
+        let popup = document.getElementById('popup');
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            // Toggle the 'dark-mode' class on the body element
+            document.body.classList.toggle('dark-mode');
+        });
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+        function sendMail() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            const params = { name, email, subject, message };
+
+            emailjs.send("service_qdkyazz", "template_sye4zx6", params)
+                .then(() => {
+                    openPopup();
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("subject").value = "";
+                    document.getElementById("message").value = "";
+                })
+                .catch((error) => {
+                    alert("Failed to send email: " + error.text);
+                });
+        }
+        //Pop-Up anzeigen!!
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+
+</html>

