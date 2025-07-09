@@ -132,23 +132,5 @@
         return false; // Verhindert das Neuladen der Seite
     }
     </script>
-    <!-- <script>
-      function sendMail(){
-        const username = document.getElementById("username").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const params = { username, subject };
-       // Service und Template ID steht in emailjs
-        emailjs.send("service_qdkyazz","template_rrqpiuq",params).then(() => {
-                alert("Email sent successfully!");
-                document.getElementById("username").value = "";
-                document.getElementById("subject").value = "";
-            })
-            .catch((error) => {
-                alert("Failed to send email: " + error.text);
-            });
-            return false
-        }
-  </script> -->
-  
 </body>
 </html>
