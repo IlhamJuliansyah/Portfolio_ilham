@@ -7,6 +7,7 @@
     text-decoration: none;
     list-style: none;
 }
+
 body {
     line-height: 1.5;
 }
@@ -106,7 +107,9 @@ section {
     justify-content: center;
     display: flex;
     gap: 7em;
-}.about-section p{
+}
+
+.about-section p {
     font-size: x-large;
     justify-content: left;
     display: flex;
@@ -279,12 +282,18 @@ section {
 
 /* Pop-up */
 footer {
+   color: #aeaeae;
     background-color: #333;
-    color: white;
     text-align: center;
     padding: 20px 0;
 }
-
+footer a {
+    text-decoration: none;
+    color: #aeaeae;
+}
+footer a:hover {
+    color: #8779ff;
+}
 /* Responsive Styles */
 
 /* Section */
@@ -300,6 +309,7 @@ footer {
         /* background-color: #c5c5c5;  */
         font-size: larger;
         display: flex;
+        justify-content: center;
         gap: 5em;
     }
 
@@ -325,7 +335,8 @@ footer {
         line-height: 1;
         text-align: left;
     }
-    .pdf{
+
+    .pdf {
         text-align: left;
     }
 
@@ -399,6 +410,7 @@ footer {
         line-height: 1;
         text-align: left;
     }
+
     .about-contact {
         padding: 20px;
         text-align: center;

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Rechner</title>
+    <link rel="stylesheet">
+    <style>
+        /* Seite zentriert, hellgrauer Hintergrund */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Die "Karte" */
+        .bmi-card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            box-sizing: border-box;
+        }
+
+        /* Titel */
+        .bmi-card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Eingabefelder */
+        .bmi-card input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        /* Button */
+        .bmi-card button {
+            width: 100%;
+            padding: 12px;
+            background-color: #006372;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .bmi-card button:hover {
+            background-color: #00acf6;
+        }
+
+        /* Ergebnisfeld */
+        .bmi-card .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bmi-card">
+        <h2>BMI Rechner</h2>
+        <input type="number" id="height" placeholder="Größe (cm)">
+        <input type="number" id="weight" placeholder="Gewicht (kg)">
+        <button onclick="calculateBMI()">Berechnen</button>
+        <div class="result" id="result"></div>
+        <a href="Website.html">home</a>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const result = document.getElementById('result');
+
+            if (!height || !weight || height <= 0 || weight <= 0) {
+                result.textContent = "Bitte gültige Werte eingeben.";
+                result.style.color = "red";
+                return;
+            }
+
+            const heightInMeters = height / 100;
+            const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+
+            let message = `Dein BMI ist ${bmi}. `;
+
+            if (bmi < 18.5) {
+                message += "Du hast Untergewicht.";
+            } else if (bmi < 25) {
+                message += "Du hast Normalgewicht.";
+            } else if (bmi < 30) {
+                message += "Du hast Übergewicht.";
+            } else {
+                message += "Du hast starkes Übergewicht (Adipositas).";
+            }
+
+            result.textContent = message;
+            result.style.color = "#333";
+        }
+
+    </script>
+</body>
+
+</html>
